@@ -6,7 +6,7 @@ Using this repository as my main repo for labbing with K3s at home.
 
 - Prometheus (metrics)
 - Cert-manager (certificates if needed)
-- CoreDNS (dns resolving needs
+- CoreDNS (dns resolving)
 - Traefik (ingress)
 - Grafana (dashboard)
 - OpenHAB (some home automation)
