@@ -44,6 +44,9 @@ sudo apt-get install helm
 
 sudo k3s kubectl create namespace argocd
 
+sudo su
+export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
+
 helm repo add argo https://argoproj.github.io/argo-helm
 helm repo update
 helm install argocd argo/argo-cd --namespace argocd
