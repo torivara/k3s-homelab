@@ -28,6 +28,16 @@ sudo systemctl status k3s
 sudo k3s kubectl get nodes
 ```
 
+## Kubeconfig
+
+```bash
+mkdir ~/.kube
+sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
+sudo chown $USER ~/.kube/config
+chmod 600 ~/.kube/config
+export KUBECONFIG=~/.kube/config
+```
+
 ## Install Helm
 
 ```bash
@@ -42,22 +52,21 @@ sudo apt-get install helm
 
 ```bash
 
-sudo k3s kubectl create namespace argocd
+kubectl create namespace argocd
 
-sudo su
-export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
+export KUBECONFIG=~/.kube/config
 
 helm repo add argo https://argoproj.github.io/argo-helm
 helm repo update
 helm install argocd argo/argo-cd --namespace argocd
 
-sudo k3s kubectl get pods -n argocd
+kubectl get pods -n argocd
 
-sudo k3s kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
 
 // Forward port
 
-sudo k3s kubectl port-forward svc/argocd-server -n argocd 8080:443
+kubectl port-forward svc/argocd-server -n argocd 8080:443
 
 ```
 
