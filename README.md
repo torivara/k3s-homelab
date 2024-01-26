@@ -58,7 +58,7 @@ export KUBECONFIG=~/.kube/config
 
 helm repo add argo https://argoproj.github.io/argo-helm
 helm repo update
-helm install argocd argo/argo-cd --namespace argocd
+ helm install argocd argo/argo-cd --namespace argocd --set configs.params."server\.insecure"=true
 
 kubectl get pods -n argocd
 
