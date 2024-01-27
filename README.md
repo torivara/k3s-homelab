@@ -6,12 +6,11 @@ Using this repository as my main repo for labbing with K3s at home.
 
 - Prometheus (metrics)
 - Cert-manager (certificates if needed)
-- CoreDNS (dns resolving)
-- Traefik (ingress)
+- CoreDNS (dns resolving) - ✅ (builtin with k3s)
+- Traefik (ingress) - ✅ (builtin with k3s)
 - Grafana (dashboard)
 - OpenHAB (some home automation)
-- Portainer (if necessary for some simplification)
-- ArgoCD (deployment)
+- ArgoCD (deployment) - ✅
 
 ## Install and configure K3s
 
@@ -58,7 +57,7 @@ export KUBECONFIG=~/.kube/config
 
 helm repo add argo https://argoproj.github.io/argo-helm
 helm repo update
- helm install argocd argo/argo-cd --namespace argocd --set configs.params."server\.insecure"=true
+helm install argocd argo/argo-cd --namespace argocd --set configs.params."server\.insecure"=true --set redis.exporter.enabled=true --set redis.metrics.enabled=true --set server.metrics.enabled=true --set controller.metrics.enabled=true
 
 kubectl get pods -n argocd
 
