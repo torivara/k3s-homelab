@@ -4,11 +4,11 @@ Using this repository as my main repo for labbing with K3s at home.
 
 ## Brainstorming
 
-- Prometheus (metrics)
+- Prometheus (metrics) - ✅
 - Cert-manager (certificates if needed)
 - CoreDNS (dns resolving) - ✅ (builtin with k3s)
 - Traefik (ingress) - ✅ (builtin with k3s)
-- Grafana (dashboard)
+- Grafana (dashboard) - ✅
 - OpenHAB (some home automation)
 - ArgoCD (deployment) - ✅
 
