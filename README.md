@@ -67,13 +67,9 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 
 kubectl port-forward svc/argocd-server -n argocd 8080:80
 
+```
+
 ## Kubernetes and Grafana
 
 kubectl port-forward service/kube-prometheus-stack-prometheus -n kube-prometheus 9090:9090
-
-```
-
-## Consider app of apps pattern
-
-[Source](https://argo-cd.readthedocs.io/en/stable/operator-manual/cluster-bootstrapping/)
 
