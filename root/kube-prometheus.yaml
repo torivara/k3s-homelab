@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: prometheus
-  namespace: kube-prometheus
+  namespace: argocd
 spec:
   destination:
     name: in-cluster
