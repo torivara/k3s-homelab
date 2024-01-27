@@ -6,7 +6,7 @@ metadata:
 spec:
   destination:
     name: in-cluster
-    namespace: kube-prometheus
+    namespace: argocd
   project: default
   source:
     repoURL: https://prometheus-community.github.io/helm-charts
