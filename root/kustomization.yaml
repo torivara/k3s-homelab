@@ -7,3 +7,5 @@ resources:
 - prometheus-node-exporter/application.yaml
 - grafana/dashboards/argo-cd.yaml
 - argocd-ingress/application.yaml
+- grafana-ingress/application.yaml
+- prometheus-ingress/application.yaml
