@@ -41,7 +41,8 @@ spec:
                   - targets: ['192.168.1.194:8080']
               - job_name: 'pve_exporter'
                 static_configs:
-                  - targets: ['192.168.1.250']
+                  - targets:
+                     - 192.168.1.250
                 metrics_path: /pve
                 params:
                   module: [default]
