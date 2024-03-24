@@ -34,6 +34,11 @@ spec:
                 scrape_timeout: 10s
                 static_configs:
                   - targets: ['alertmanager-operated.argocd.svc.cluster.local:9093']
+              - job_name: "qbittorrent_exporter"
+                scrape_interval: 10m
+                scrape_timeout: 10s
+                static_configs:
+                  - targets: ['192.168.1.194:8080']
         alertmanager:
           enabled: true
         nodeExporter:
